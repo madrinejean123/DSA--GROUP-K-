@@ -11,11 +11,11 @@ city_to_index = {
     "City 7": 6
 }
 
-# Initialize a 7x7 distance matrix with infinity
+# Initialize the 7x7 distance matrix with infinity
 n = 7
 dist_matrix = [[float('inf')] * n for _ in range(n)]
 for i in range(n):
-    dist_matrix[i][i] = 0  # Distance from a city to itself is 0
+    dist_matrix[i][i] = 0  # Distance from  city to itself is equal to 0
 
 # Populate the matrix from the adjacency list
 graph = {
