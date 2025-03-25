@@ -1,0 +1,20 @@
+def create_graph():
+    """Function to create and return a TSP graph represented as an adjacency list."""
+    return {
+        "City 1": {"City 2": 12, "City 3": 10, "City 7": 12},
+        "City 2": {"City 1": 12, "City 3": 8, "City 4": 12},
+        "City 3": {"City 1": 10, "City 2": 8, "City 4": 11, "City 5": 3, "City 7": 12},
+        "City 4": {"City 2": 12, "City 3": 11, "City 5": 11, "City 6": 10},
+        "City 5": {"City 3": 3, "City 4": 11, "City 6": 6, "City 7": 9},
+        "City 6": {"City 4": 10, "City 5": 6, "City 7": 9},
+        "City 7": {"City 1": 12, "City 3": 12, "City 5": 9, "City 6": 9}
+    }
+
+def get_distance(graph, city1, city2):
+    """Function to get the distance between two cities."""
+    return graph.get(city1, {}).get(city2, "No direct connection")
+
+if __name__ == "__main__":
+    graph = create_graph()
+    city1, city2 = "City 4", "City 5"
+    print(f"Distance from {city1} to {city2}: {get_distance(graph, city1, city2)}")
